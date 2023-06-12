@@ -1,0 +1,11 @@
+[
+    {
+        "model-name": "countries",
+        "resource-file": "countries.json",
+        "table-name": "countries"
+    },
+    {
+        "model-name": "Client",
+        "resource-file": "clients.json"
+    }
+]
