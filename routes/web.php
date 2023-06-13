@@ -37,15 +37,19 @@ Route::get('/term', function (Request $request) {
 
 Route::get('/confiramtion', function (Request $request) {
     $id = $request->id;
-    $sms = new Sms;
+
     $client = App\Models\Client::find($id);
     $contry = App\Models\countries::find($client->contry_id );
 
     $code = mt_rand(1111,9999);
     $client->code = $code;
     $client->save();
-
+    try {
+        $sms = new Sms;
     $sms->send($contry->phonecode.$client->phone,"Hello your code :  ".$code);
+    } catch (\Throwable $th) {
+       dd($th);
+    }
    return view('confiramtion',compact('id'));
  })->name('confiramtion');
 

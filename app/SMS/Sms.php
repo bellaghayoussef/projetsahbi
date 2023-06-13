@@ -9,15 +9,13 @@ class Sms {
 
        try {
         $sid    = "ACf169e8f69b9fe6f3fd803569612a0692";
-        $token  ="a78267e1199a4c26fe4ac16fbd39ff3d";
-      $receiverNumber = '+'.$receiverNumber;
-
+        $token  = "858882cbb8a43eaf88c38152d952593c";
         $twilio = new Client($sid, $token);
 
         $message = $twilio->messages
-                          ->create( $receiverNumber, // to
-                                   array(
-                                       "messagingServiceSid" => "MG3b1fa6a59cc206bca7da6ee54f0833a6",
+          ->create("+21656818880", // to
+            array(
+                "from" => "+19852484364",
                                        "body" => $messaged
                                    )
                           );

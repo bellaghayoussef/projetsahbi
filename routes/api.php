@@ -39,3 +39,26 @@ Route::get('command', function () {
 
 
 });
+use Twilio\Rest\Client;
+
+Route::get('sms', function () {
+
+
+
+    $sid    = "ACf169e8f69b9fe6f3fd803569612a0692";
+    $token  = "858882cbb8a43eaf88c38152d952593c";
+    $twilio = new Client($sid, $token);
+
+    $message = $twilio->messages
+      ->create("+21656818880", // to
+        array(
+            "from" => "+19852484364",
+          "body" => 'test taw'
+
+        )
+      );
+
+
+});
+
+

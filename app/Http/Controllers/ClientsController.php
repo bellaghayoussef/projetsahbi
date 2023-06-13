@@ -18,10 +18,10 @@ class ClientsController extends Controller
 {
     use AuthenticatesUsers;
 
-    public function __construct()
-    {
-      $this->middleware('guest')->except('logout');
-    }
+    // public function __construct()
+    // {
+    //   $this->middleware('guest')->except('logout');
+    // }
 
     /**
      * Display a listing of the clients.
