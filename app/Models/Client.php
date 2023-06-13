@@ -4,12 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-class Client extends Model
-{
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
+class Client  extends Authenticatable
+{
+    use Notifiable;
     use SoftDeletes;
 
-
+    protected $hidden = ['password',  'remember_token'];
     /**
      * The database table used by the model.
      *

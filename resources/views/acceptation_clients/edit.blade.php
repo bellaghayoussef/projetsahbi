@@ -7,15 +7,15 @@
         <div class="panel-heading clearfix">
 
             <div class="pull-left">
-                <h4 class="mt-5 mb-5">{{ !empty($title) ? $title : 'Client' }}</h4>
+                <h4 class="mt-5 mb-5">{{ !empty($title) ? $title : 'Acceptation Client' }}</h4>
             </div>
             <div class="btn-group btn-group-sm pull-right" role="group">
 
-                <a href="{{ route('clients.client.index') }}" class="btn btn-primary" title="{{ trans('clients.show_all') }}">
+                <a href="{{ route('acceptation_clients.acceptation_client.index') }}" class="btn btn-primary" title="{{ trans('acceptation_clients.show_all') }}">
                     <span class="fa fa-th-list" aria-hidden="true"></span>
                 </a>
 
-                <a href="{{ route('clients.client.create') }}" class="btn btn-success" title="{{ trans('clients.create') }}">
+                <a href="{{ route('acceptation_clients.acceptation_client.create') }}" class="btn btn-success" title="{{ trans('acceptation_clients.create') }}">
                     <span class="fa fa-plus" aria-hidden="true"></span>
                 </a>
 
@@ -32,16 +32,16 @@
                 </ul>
             @endif
 
-            <form method="POST" action="{{ route('clients.client.update', $client->id) }}" id="edit_client_form" name="edit_client_form" accept-charset="UTF-8" class="form-horizontal">
+            <form method="POST" action="{{ route('acceptation_clients.acceptation_client.update', $acceptationClient->id) }}" id="edit_acceptation_client_form" name="edit_acceptation_client_form" accept-charset="UTF-8" class="form-horizontal">
             {{ csrf_field() }}
             <input name="_method" type="hidden" value="PUT">
-            @include ('clients.form', [
-                                        'client' => $client,
+            @include ('acceptation_clients.form', [
+                                        'acceptationClient' => $acceptationClient,
                                       ])
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input class="btn btn-primary" type="submit" value="{{ trans('clients.update') }}">
+                        <input class="btn btn-primary" type="submit" value="{{ trans('acceptation_clients.update') }}">
                     </div>
                 </div>
             </form>

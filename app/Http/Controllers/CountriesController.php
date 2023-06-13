@@ -9,6 +9,15 @@ use Exception;
 
 class CountriesController extends Controller
 {
+     /**
+  * Create a new controller instance.
+  *
+  * @return void
+  */
+ public function __construct()
+ {
+     $this->middleware('auth');
+ }
 
     /**
      * Display a listing of the countries.
@@ -29,8 +38,8 @@ class CountriesController extends Controller
      */
     public function create()
     {
-        
-        
+
+
         return view('countries.create');
     }
 
@@ -44,9 +53,9 @@ class CountriesController extends Controller
     public function store(Request $request)
     {
         try {
-            
+
             $data = $this->getData($request);
-            
+
             countries::create($data);
 
             return redirect()->route('countries.countries.index')
@@ -82,7 +91,7 @@ class CountriesController extends Controller
     public function edit($id)
     {
         $countries = countries::findOrFail($id);
-        
+
 
         return view('countries.edit', compact('countries'));
     }
@@ -98,9 +107,9 @@ class CountriesController extends Controller
     public function update($id, Request $request)
     {
         try {
-            
+
             $data = $this->getData($request);
-            
+
             $countries = countries::findOrFail($id);
             $countries->update($data);
 
@@ -110,7 +119,7 @@ class CountriesController extends Controller
 
             return back()->withInput()
                 ->withErrors(['unexpected_error' => trans('countries.unexpected_error')]);
-        }        
+        }
     }
 
     /**
@@ -135,11 +144,11 @@ class CountriesController extends Controller
         }
     }
 
-    
+
     /**
      * Get the request's data from the request.
      *
-     * @param Illuminate\Http\Request\Request $request 
+     * @param Illuminate\Http\Request\Request $request
      * @return array
      */
     protected function getData(Request $request)
@@ -150,10 +159,10 @@ class CountriesController extends Controller
             'iso3' => 'nullable|string|min:0|max:3',
             'numcode' => 'nullable',
             'phonecode' => 'required|numeric|min:-2147483648|max:2147483647',
-            'active' => 'required|string|min:1|max:255', 
+            'active' => 'required|string|min:1|max:255',
         ];
 
-        
+
         $data = $request->validate($rules);
 
 

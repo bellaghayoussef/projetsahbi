@@ -137,6 +137,38 @@ button{
 #left {width: 25%; }
 #middle {width: 70%; }
 #right {width: 25%;}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.flex-row {
+    display: flex;
+}
+.wrapper {
+    border: 1px solid #4b00ff;
+    border-right: 0;
+}
+canvas#signature-pad {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+button#clear {
+    height: 100%;
+    background: #4b00ff;
+    border: 1px solid transparent;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+button#clear span {
+
+    display: block;
+}
     </style>
 </head>
 <body>
@@ -148,7 +180,8 @@ button{
     $countries =   App\Models\countries::where('active',1)->get();
 
   @endphp
-    <form method="POST" action="{{ route('clients.client.signature', $id) }}" id="edit_client_form" name="edit_client_form" accept-charset="UTF-8" class="form-horizontal">
+
+    <form method="POST" action="{{ route('clients.client.signature', $id) }}"  onsubmit="return validateForm()" enctype="multipart/form-data"  id="edit_client_form" name="edit_client_form" accept-charset="UTF-8" class="form-horizontal">
         {{ csrf_field() }}
         <input name="_method" type="hidden" value="PUT">
         <h3>{{ __('login.Login Here') }}</h3>
@@ -237,7 +270,15 @@ button{
         </p>
 
         <label for="password">{{ __('login.signature') }}</label>
-        <input type="checkbox" required name="Signature"  id="Signature" value="">
+
+<input type="checkbox" name="c" id="c" required>
+            <div class="wrapper left">
+                <canvas id="signature-pad"  width="400" height="200"></canvas>
+            </div>
+            <div class="">
+                <a id="clear"><span> Clear </span></button>
+            </div>
+<input type="hidden" id="canvasimg" name="signature" alt="" required>
 
 
 <br>
@@ -247,6 +288,39 @@ button{
     </form>
 
     <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.3.5/signature_pad.min.js" integrity="sha512-kw/nRM/BMR2XGArXnOoxKOO5VBHLdITAW00aG8qK4zBzcLVZ4nzg7/oYCaoiwc8U9zrnsO9UHqpyljJ8+iqYiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+           var canvas = document.getElementById("signature-pad");
 
+           function resizeCanvas() {
+               var ratio = Math.max(window.devicePixelRatio || 1, 1);
+               canvas.width = canvas.offsetWidth * ratio;
+               canvas.height = canvas.offsetHeight * ratio;
+               canvas.getContext("2d").scale(ratio, ratio);
+
+
+           }
+           window.onresize = resizeCanvas;
+           resizeCanvas();
+
+           var signaturePad = new SignaturePad(canvas, {
+            backgroundColor: 'rgb(250,250,250)'
+           });
+
+           document.getElementById("clear").addEventListener('click', function(){
+            signaturePad.clear();
+
+           })
+
+          function validateForm() {
+            document.getElementById('canvasimg').value = canvas.toDataURL();
+            if(document.getElementById('canvasimg').value == null){
+                return false;
+            }
+            return true;
+          }
+
+
+       </script>
 </body>
 </html>

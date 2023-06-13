@@ -147,15 +147,17 @@ button{
     $countries =   App\Models\countries::where('active',1)->get();
 
   @endphp
-    <form>
+    <form  method="POST" action="{{ route('clients.client.login') }}" accept-charset="UTF-8" id="create_users_form" name="create_users_form" class="form-horizontal">
+        {{ csrf_field() }}
         <h3>{{ __('login.Login Here') }}</h3>
 
         <label for="username">{{ __('login.Username') }}</label>
         <div id="container">
-            <div id="middle">  <input type="number" placeholder="Email or Phone" id="username"></div>
+            <div id="middle">
+                 <input type="number" placeholder=" Phone" name="phone" id="username"></div>
             <div id="left">
 
-                <select name="contry" id="">
+                <select name="ccontry_id" id="">
                     @foreach ($countries as $countrie)
                     <option value="{{ $countrie->id }}">{{ $countrie->phonecode }}+</option>
                     @endforeach
@@ -169,7 +171,7 @@ button{
         </div>
 
         <label for="password">{{ __('login.Password') }}</label>
-        <input type="password" placeholder="Password" id="password">
+        <input type="password" placeholder="Password" name="password" id="password">
 
         <button>{{ __('login.Log In') }}</button>
         <div class="social">

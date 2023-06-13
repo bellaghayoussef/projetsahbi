@@ -80,10 +80,10 @@
 </head>
 
 <body class="g-sidenav-show rtl bg-gray-200">
- @include('layouts.sidbar')
+ @include('layouts.sidbarclient')
 
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg overflow-x-hidden">
-    @include('layouts.Navbar')
+    @include('layouts.Navbarclient')
     <div class="container-fluid py-4">
 
 @yield('content')

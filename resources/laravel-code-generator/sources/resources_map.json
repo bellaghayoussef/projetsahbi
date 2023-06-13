@@ -7,5 +7,9 @@
     {
         "model-name": "Client",
         "resource-file": "clients.json"
+    },
+    {
+        "model-name": "AcceptationClient",
+        "resource-file": "acceptation_clients.json"
     }
 ]

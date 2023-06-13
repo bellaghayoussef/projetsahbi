@@ -5,6 +5,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\ClientsController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\AcceptationClientsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,14 @@ use Illuminate\Http\Request;
 */
 use App\SMS\Sms;
 Route::get('/', function () {
+
+if(auth()->guard('clientt')->check()){
+return redirect()->route('client.home');
+}
+if(auth()->guard()->check()){
+    return redirect()->route('home');
+    }
+
     return view('welcome');
 })->name('/');
 
@@ -46,8 +55,9 @@ Route::get('/singup', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/client/home', [App\Http\Controllers\HomeClientController::class, 'index'])->name('client.home');
 
 
 
@@ -109,8 +119,13 @@ Route::group([
 
     Route::post('/sungupp', [ClientsController::class, 'sungupp'])
          ->name('clients.client.sungupp');
-    Route::put('client/{client}', [ClientsController::class, 'update'])
-         ->name('clients.client.update')->where('id', '[0-9]+');
+    Route::put('client/{client}', [ClientsController::class, 'update'])->name('clients.client.update')->where('id', '[0-9]+');
+    Route::put('clientm/{client}', [ClientsController::class, 'updatem'])->name('clients.client.updatem')->where('id', '[0-9]+');
+    Route::put('refused/{client}', [ClientsController::class, 'refused'])->name('clients.client.refused')->where('id', '[0-9]+');
+
+    Route::get('accept/{client}', [ClientsController::class, 'accept'])->name('clients.client.accept')->where('id', '[0-9]+');
+
+
     Route::put('confiramtionc/{client}', [ClientsController::class, 'confiramtion'])
          ->name('clients.client.confiramtion')->where('id', '[0-9]+');
 
@@ -120,4 +135,26 @@ Route::group([
 
     Route::delete('/client/{client}',[ClientsController::class, 'destroy'])
          ->name('clients.client.destroy')->where('id', '[0-9]+');
+
+    Route::post('/login', [ClientsController::class, 'login'])
+         ->name('clients.client.login');
+});
+
+Route::group([
+    'prefix' => 'acceptation_clients',
+], function () {
+    Route::get('/', [AcceptationClientsController::class, 'index'])
+         ->name('acceptation_clients.acceptation_client.index');
+    Route::get('/create', [AcceptationClientsController::class, 'create'])
+         ->name('acceptation_clients.acceptation_client.create');
+    Route::get('/show/{acceptationClient}',[AcceptationClientsController::class, 'show'])
+         ->name('acceptation_clients.acceptation_client.show')->where('id', '[0-9]+');
+    Route::get('/{acceptationClient}/edit',[AcceptationClientsController::class, 'edit'])
+         ->name('acceptation_clients.acceptation_client.edit')->where('id', '[0-9]+');
+    Route::post('/', [AcceptationClientsController::class, 'store'])
+         ->name('acceptation_clients.acceptation_client.store');
+    Route::put('acceptation_client/{acceptationClient}', [AcceptationClientsController::class, 'update'])
+         ->name('acceptation_clients.acceptation_client.update')->where('id', '[0-9]+');
+    Route::delete('/acceptation_client/{acceptationClient}',[AcceptationClientsController::class, 'destroy'])
+         ->name('acceptation_clients.acceptation_client.destroy')->where('id', '[0-9]+');
 });

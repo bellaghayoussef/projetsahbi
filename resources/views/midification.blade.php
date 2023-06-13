@@ -147,9 +147,9 @@ button{
     $countries =   App\Models\countries::where('active',1)->get();
 
   @endphp
-    <form  method="POST" action="{{ route('clients.client.sungupp') }}" enctype="multipart/form-data" accept-charset="UTF-8" id="create_client_form" name="create_client_form" class="form-horizontal">
+    <form   method="POST" action="{{ route('clients.client.updatem', $client->id) }}" id="edit_client_form" name="edit_client_form" accept-charset="UTF-8" class="form-horizontal">
         {{ csrf_field() }}
-
+        <input name="_method" type="hidden" value="PUT">
 
 
         <div id="container">
@@ -164,7 +164,7 @@ button{
         <div id="left" class="form-group {{ $errors->has('first_name') ? 'has-error' : '' }}">
             <label for="first_name" class="col-md-2 control-label">{{ trans('clients.first_name') }}</label>
             <div class="col-md-10">
-                <input required class="form-control" name="first_name" type="text" id="first_name" value="" minlength="1" placeholder="{{ trans('clients.first_name__placeholder') }}">
+                <input required class="form-control" name="first_name" type="text" id="first_name" value="{{ $client->first_name }}" minlength="1" placeholder="{{ trans('clients.first_name__placeholder') }}">
                 {!! $errors->first('first_name', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
@@ -172,7 +172,7 @@ button{
         <div id="left" class="form-group {{ $errors->has('last_name') ? 'has-error' : '' }}">
             <label for="last_name" class="col-md-2 control-label">{{ trans('clients.last_name') }}</label>
             <div class="col-md-10">
-                <input required class="form-control" name="last_name" type="text" id="last_name" value="" minlength="1" placeholder="{{ trans('clients.last_name__placeholder') }}">
+                <input required class="form-control" name="last_name" type="text" id="last_name" value="{{ $client->last_name }}" minlength="1" placeholder="{{ trans('clients.last_name__placeholder') }}">
                 {!! $errors->first('last_name', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
@@ -182,11 +182,11 @@ button{
             <div class="row">
 
                 <div id="left">
-                <input required class="form-control" name="phone" type="number" id="phone" value="" minlength="1" placeholder="{{ trans('clients.phone__placeholder') }}">
+                <input required class="form-control" name="phone" type="number" id="phone" value="{{ $client->phone }}" minlength="1" placeholder="{{ trans('clients.phone__placeholder') }}">
                 {!! $errors->first('phone', '<p class="help-block">:message</p>') !!}
             </div>
             <div id="left">
-                <select class="form-control select-css " id="contry_id" name="contry_id">
+                <select class="form-control select-css " id="contry_id" name="contry_id" required>
                         <option value="" style="display: none;" disabled selected>{{ trans('clients.contry_id__placeholder') }}</option>
                     @foreach ($countries as  $contry)
                         <option value="{{ $contry->id }}" >
@@ -203,7 +203,7 @@ button{
         <div id="right" class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
             <label for="email" class="col-md-2 control-label">{{ trans('clients.email') }}</label>
             <div class="col-md-10">
-                <input required class="form-control" name="email" type="email" id="email" value="" placeholder="{{ trans('clients.email__placeholder') }}">
+                <input required class="form-control" name="email" type="email" id="email" value="{{ $client->email }}" placeholder="{{ trans('clients.email__placeholder') }}">
                 {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
@@ -211,7 +211,7 @@ button{
         <div id="right" class="form-group {{ $errors->has('ud') ? 'has-error' : '' }}">
             <label for="ud" class="col-md-2 control-label">{{ trans('clients.ud') }}</label>
             <div class="col-md-10">
-                <input required class="form-control" name="ud" type="number" min="11111111111" max="99999999999" id="ud" value="" minlength="1" placeholder="{{ trans('clients.ud__placeholder') }}">
+                <input required class="form-control" name="ud" type="number" min="11111111111" max="99999999999" id="ud" value="{{ $client->ud }}" minlength="1" placeholder="{{ trans('clients.ud__placeholder') }}">
                 {!! $errors->first('ud', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
@@ -219,7 +219,7 @@ button{
         <div id="left" class="form-group {{ $errors->has('photo_ud_frent') ? 'has-error' : '' }}">
             <label for="photo_ud_frent" class="col-md-2 control-label">{{ trans('clients.photo_ud_frent') }}</label>
             <div class="col-md-10">
-                <input required class="form-control" name="photo_ud_frent" type="file" id="photo_ud_frent" value="" minlength="1" placeholder="{{ trans('clients.photo_ud_frent__placeholder') }}">
+                <input required class="form-control" name="photo_ud_frentd" type="file" id="photo_ud_frent" value="{{ $client->photo_ud_frent }}" minlength="1" placeholder="{{ trans('clients.photo_ud_frent__placeholder') }}">
                 {!! $errors->first('photo_ud_frent', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
@@ -227,7 +227,7 @@ button{
         <div id="left" class="form-group {{ $errors->has('photo_ud_back') ? 'has-error' : '' }}">
             <label for="photo_ud_back" class="col-md-2 control-label">{{ trans('clients.photo_ud_back') }}</label>
             <div class="col-md-10">
-                <input required class="form-control" name="photo_ud_back" type="file" id="photo_ud_back" value="" minlength="1" placeholder="{{ trans('clients.photo_ud_back__placeholder') }}">
+                <input required class="form-control" name="photo_ud_backd" type="file" id="photo_ud_back" value="{{ $client->photo_ud_back }}" minlength="1" placeholder="{{ trans('clients.photo_ud_back__placeholder') }}">
                 {!! $errors->first('photo_ud_back', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
@@ -235,7 +235,7 @@ button{
         <div id="left" class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
             <label for="password" class="col-md-2 control-label">{{ trans('clients.password') }}</label>
             <div class="col-md-10">
-                <input required class="form-control" name="password" type="password" id="password" value="" placeholder="{{ trans('clients.password__placeholder') }}">
+                <input required class="form-control" name="password" type="password" id="password"  placeholder="{{ trans('clients.password__placeholder') }}">
 
             </div>
         </div>
@@ -247,7 +247,7 @@ button{
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
             </div>
         </div>
-        <button>{{ __('login.Login') }}</button>
+        <button type="submit">{{ __('login.Login') }}</button>
 
 
 

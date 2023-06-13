@@ -7,9 +7,21 @@ use App\Models\Client;
 use App\Models\countries as Contry;
 use Illuminate\Http\Request;
 use Exception;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use App\Models\AcceptationClient;
+use App\SMS\Sms;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 class ClientsController extends Controller
 {
+    use AuthenticatesUsers;
+
+    public function __construct()
+    {
+      $this->middleware('guest')->except('logout');
+    }
 
     /**
      * Display a listing of the clients.
@@ -98,6 +110,7 @@ class ClientsController extends Controller
      */
     public function update($id, Request $request)
     {
+
         try {
 
             $data = $this->getData($request);
@@ -159,18 +172,25 @@ class ClientsController extends Controller
             'refused' => 'string|min:1|nullable',
         ];
 
+
+
+
+
+
+
+
+
+
+        $data = $request->validate($rules);
         if ($request->hasFile('photo_ud_frent')) {
             $data['photo_ud_frent'] = $this->moveFile($request->file('photo_ud_frent'));
         }
-
         if ($request->hasFile('photo_ud_back')) {
             $data['photo_ud_back'] = $this->moveFile($request->file('photo_ud_back'));
         }
 
-        $data = $request->validate($rules);
 
-
-
+        $data['password']=  Hash::make($data['password']);
 
         return $data;
     }
@@ -209,9 +229,15 @@ class ClientsController extends Controller
         try {
 
 
+            $image = $request->signature;  // your base64 encoded
+            $image = str_replace('data:image/png;base64,', '', $image);
+            $image = str_replace(' ', '+', $image);
+            $imageName = Str::random(12) . '.png';
+
+            Storage::disk('local')->put('images/'.$imageName, base64_decode($image));
 
             $client = Client::findOrFail($id);
-            $client->singateur = 1;
+            $client->singateur = $imageName;
             $client->save();
             return redirect()->route('confiramtion',['id' => $client->id] )
                 ->with('success_message', trans('clients.model_was_added'));
@@ -245,5 +271,122 @@ class ClientsController extends Controller
 
 
 
+    public function accept ($id, Request $request)
+    {
+        try {
 
+            $client = Client::findOrFail($id);
+            $client->accepted = 1;
+            $client->refused = 0;
+            $client->save();
+            $accept = new AcceptationClient();
+            $accept->User_id = Auth()->user()->id;
+            $accept->Client_id = $client->id;
+            $accept->commenter = "accepted";
+            $accept->save();
+            $sms = new Sms;
+$contry = Contry::find($client->contry_id );
+$sms->send($contry->phonecode.$client->phone,$accept->commenter);
+
+            return redirect()->route('clients.client.index')
+                ->with('success_message', trans('clients.model_was_updated'));
+        } catch (Exception $exception) {
+            return back()->withInput()
+                ->withErrors(['unexpected_error' => trans('clients.unexpected_error')]);
+        }
+    }
+
+    public function refused ($id, Request $request)
+    {
+
+        try {
+            $client = Client::findOrFail($id);
+            $client->accepted = 0;
+            $client->refused = 1;
+            $client->save();
+            $accept = new AcceptationClient();
+            $accept->User_id = Auth()->user()->id;
+            $accept->Client_id = $client->id;
+            $accept->commenter = $request->commenter;
+            $accept->save();
+            $sms = new Sms;
+            $contry = Contry::find($client->contry_id );
+            $sms->send($contry->phonecode.$client->phone,"refused :  ".$accept->commenter);
+            return redirect()->route('clients.client.index')
+                ->with('success_message', trans('clients.model_was_updated'));
+        } catch (Exception $exception) {
+            return back()->withInput()
+                ->withErrors(['unexpected_error' => trans('clients.unexpected_error')]);
+        }
+    }
+
+
+
+    function login(Request $request){
+
+        $client = Client::where('phone',$request->phone)->where('contry_id',$request->ccontry_id)->first();
+
+        if($client){
+            if($client->virification == null){
+                return redirect()->route('confiramtion',['id' => $client->id] );
+            }elseif($client->refused == 1){
+                return view('midification',compact('client'));
+            }elseif($client->refused == null && $client->accepted == null){
+                return redirect()->route('/');
+            }elseif($client->accepted == 1){
+
+                if (Auth::guard('clientt')->attempt(['email' =>$client->email, 'password' =>$request->password])) {
+                        // Authentication was successful...
+                        return redirect()->route('client.home');
+                 }
+               else{
+                dd('not conecter');
+                   return back()->with('fail','Incorrect credentials');
+                 }
+            }
+
+        }else{
+            return back();
+        }
+    }
+
+    public function updatem($id, Request $request)
+    {
+
+        try {
+
+
+
+            $client = Client::findOrFail($id);
+            $client->first_name =$request->first_name;
+            $client->last_name =$request->last_name;
+            $client->phone =$request->phone;
+            $client->ud =$request->ud;
+            $client->email =$request->email;
+            if ($request->hasFile('photo_ud_frent')) {
+                $client->photo_ud_frent = $this->moveFile($request->file('photo_ud_frentd'));
+            }
+            if ($request->hasFile('photo_ud_back')) {
+                $client->photo_ud_back = $this->moveFile($request->file('photo_ud_backd'));
+            }
+
+
+            $client->password =  Hash::make($request->password);
+            $client->contry_id =$request->contry_id;
+
+
+
+            $client->accepted = null;
+            $client->refused = null;
+            $client->virification = null;
+
+            $client->save();
+            return redirect()->route('term',['id' => $client->id] )
+            ->with('success_message', trans('clients.model_was_added'));
+        } catch (Exception $exception) {
+
+            return back()->withInput()
+                ->withErrors(['unexpected_error' => trans('clients.unexpected_error')]);
+        }
+    }
 }

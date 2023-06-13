@@ -1,4 +1,4 @@
-@extends('[% layout_name %]')
+@extends('layouts.app')
 
 @section('content')
 
@@ -19,20 +19,20 @@
         <div class="panel-heading clearfix">
 
             <div class="pull-left">
-                <h4 class="mt-5 mb-5">[% model_plural %]</h4>
+                <h4 class="mt-5 mb-5">{{ trans('acceptation_clients.model_plural') }}</h4>
             </div>
 
             <div class="btn-group btn-group-sm pull-right" role="group">
-                <a href="{{ route('[% create_route_name %]') }}" class="btn btn-success" title="[% create_model %]">
+                <a href="{{ route('acceptation_clients.acceptation_client.create') }}" class="btn btn-success" title="{{ trans('acceptation_clients.create') }}">
                     <span class="fa fa-plus" aria-hidden="true"></span>
                 </a>
             </div>
 
         </div>
 
-        @if(count($[% model_name_plural_variable %]) == 0)
+        @if(count($acceptationClients) == 0)
             <div class="panel-body text-center">
-                <h4>[% no_models_available %]</h4>
+                <h4>{{ trans('acceptation_clients.none_available') }}</h4>
             </div>
         @else
         <div class="panel-body panel-body-with-table">
@@ -41,34 +41,30 @@
                 <table class="table table-striped ">
                     <thead>
                         <tr>
-[% header_cells %]
+                            <th>{{ trans('acceptation_clients.User_id') }}</th>
+                            <th>{{ trans('acceptation_clients.Client_id') }}</th>
+                            <th>{{ trans('acceptation_clients.commenter') }}</th>
+
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($[% model_name_plural_variable %] as $[% model_name_singular_variable %])
+                    @foreach($acceptationClients as $acceptationClient)
                         <tr>
-[% body_cells %]
+                            <td>{{ optional($acceptationClient->user)->first_name }} {{ optional($acceptationClient->user)->last_name }}</td>
+                            <td>{{ optional($acceptationClient->client)->first_name }} {{ optional($acceptationClient->client)->last_name }}</td>
+                            <td>{{ $acceptationClient->commenter }}</td>
+
                             <td>
 
-                                <form method="POST" action="{!! route('[% destroy_route_name %]', $[% model_name_singular_variable %]->[% primary_key %]) !!}" accept-charset="UTF-8">
-                                <input name="_method" value="DELETE" type="hidden">
-                                {{ csrf_field() }}
 
                                     <div class="btn-group btn-group-xs pull-right" role="group">
-                                        <a href="{{ route('[% show_route_name %]', $[% model_name_singular_variable %]->[% primary_key %] ) }}" class="btn btn-info" title="[% show_model %]">
+                                        <a href="{{ route('acceptation_clients.acceptation_client.show', $acceptationClient->id ) }}" class="btn btn-info" title="{{ trans('acceptation_clients.show') }}">
                                             <span class="fa fa-eye" aria-hidden="true"></span>
                                         </a>
-                                        <a href="{{ route('[% edit_route_name %]', $[% model_name_singular_variable %]->[% primary_key %] ) }}" class="btn btn-primary" title="[% edit_model %]">
-                                            <span class="fa fa-pencil" aria-hidden="true"></span>
-                                        </a>
 
-                                        <button type="submit" class="btn btn-danger" title="[% delete_model %]" onclick="return confirm(&quot;[% confirm_delete %]&quot;)">
-                                            <span class="fa fa-trash" aria-hidden="true"></span>
-                                        </button>
                                     </div>
 
-                                </form>
 
                             </td>
                         </tr>
@@ -80,7 +76,7 @@
         </div>
 
         <div class="panel-footer">
-            {!! $[% model_name_plural_variable %]->render() !!}
+            {!! $acceptationClients->render() !!}
         </div>
 
         @endif
