@@ -57,7 +57,7 @@ return [
     'update' => 'Update',
     'confirm_delete' => 'Click Ok to delete Countries.',
     'none_available' => 'No Countries Available.',
-    'model_plural' => 'Countries',
+    'model_plural' => 'بلدان',
     'model_was_added' => 'Countries was successfully added.',
     'model_was_retrieved' => 'Countries was successfully retrieved.',
     'models_were_retrieved' => 'Countries were successfully retrieved.',

@@ -23,9 +23,7 @@
             </div>
 
             <div class="btn-group btn-group-sm pull-right" role="group">
-                <a href="{{ route('acceptation_clients.acceptation_client.create') }}" class="btn btn-success" title="{{ trans('acceptation_clients.create') }}">
-                    <span class="fa fa-plus" aria-hidden="true"></span>
-                </a>
+
             </div>
 
         </div>
@@ -42,8 +40,11 @@
                     <thead>
                         <tr>
                             <th>{{ trans('acceptation_clients.User_id') }}</th>
+                            <th>{{ trans('users.ud') }}</th>
                             <th>{{ trans('acceptation_clients.Client_id') }}</th>
-                            <th>{{ trans('acceptation_clients.commenter') }}</th>
+                            <th>{{ trans('clients.ud') }}</th>
+
+                            <th>{{ trans('acceptation_clients.date') }}</th>
 
                             <th></th>
                         </tr>
@@ -52,8 +53,11 @@
                     @foreach($acceptationClients as $acceptationClient)
                         <tr>
                             <td>{{ optional($acceptationClient->user)->first_name }} {{ optional($acceptationClient->user)->last_name }}</td>
+                            <td>{{ optional($acceptationClient->user)->ud }} </td>
                             <td>{{ optional($acceptationClient->client)->first_name }} {{ optional($acceptationClient->client)->last_name }}</td>
-                            <td>{{ $acceptationClient->commenter }}</td>
+                            <td>{{ optional($acceptationClient->client)->ud }} </td>
+
+                            <td>{{ $acceptationClient->created_at }}</td>
 
                             <td>
 

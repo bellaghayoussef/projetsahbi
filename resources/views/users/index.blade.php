@@ -38,7 +38,7 @@
         <div class="panel-body panel-body-with-table">
             <div class="table-responsive table-responsive p-0">
 
-                <table class="table align-items-center mb-0">
+                <table class="table align-items-center mb-0" style="   ">
                     <thead>
                         <tr>
                             <th>{{ trans('users.first_name') }}</th>

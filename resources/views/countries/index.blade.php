@@ -38,7 +38,7 @@
         <div class="panel-body panel-body-with-table">
             <div class="table-responsive">
 
-                <table class="table table-striped ">
+                <table id="files_list" class="table table-striped dt-responsive  " style="width:100%">
                     <thead>
                         <tr>
                             <th>{{ trans('countries.iso') }}</th>

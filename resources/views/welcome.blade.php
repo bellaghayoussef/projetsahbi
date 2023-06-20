@@ -173,7 +173,8 @@ button{
         <label for="password">{{ __('login.Password') }}</label>
         <input type="password" placeholder="Password" name="password" id="password">
 
-        <button>{{ __('login.Log In') }}</button>
+        <button type="submit">{{ __('login.Log In') }}</button>
+        <a href="{{ url('singup')}}" >{{ trans('login.Login')}}</a>
         <div class="social">
           <div class="go"><i class="fa fa-phone"></i>  phone</div>
           <div class="fb"><i class="fa fa-whatsapp" aria-hidden="true"></i>  whatsapp</div>

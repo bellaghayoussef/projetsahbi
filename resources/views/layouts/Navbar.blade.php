@@ -11,14 +11,17 @@
         <div class="collapse navbar-collapse mt-sm-0 mt-2 px-0" id="navbar">
 
           <ul class="navbar-nav me-auto ms-0 justify-content-end">
-            {{-- <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+            <li class="nav-item d-flex align-items-center">
+              <a  href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">يسجل دخول</span>
+                <span class="d-sm-inline d-none">تسجيل خروج</span>
               </a>
-            </li> --}}
+            </li>
 
         </div>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
       </div>
     </nav>
     <!-- End Navbar -->

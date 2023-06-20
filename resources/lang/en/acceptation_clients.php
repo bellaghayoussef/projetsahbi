@@ -47,7 +47,7 @@ return [
     'edit' => 'Edit Acceptation Client',
     'show' => 'Show Acceptation Client',
     'show_all' => 'Show All Acceptation Client',
-    'add' => 'Add',
+    'date' => 'date',
     'update' => 'Update',
     'confirm_delete' => 'Click Ok to delete Acceptation Client.',
     'none_available' => 'No Acceptation Clients Available.',
