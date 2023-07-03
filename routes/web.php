@@ -6,6 +6,9 @@ use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\ClientsController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AcceptationClientsController;
+use App\Http\Controllers\ApiUsersController;
+use App\Http\Controllers\ANIMALINFOsController;
+use App\Http\Controllers\ImportationsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,6 +66,34 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/client/home', [App\Http\Controllers\HomeClientController::class, 'index'])->name('client.home');
 
+
+Route::group([
+    'prefix' => 'client',
+], function () {
+
+
+Route::group([
+    'prefix' => 'importations',
+], function () {
+    Route::get('/', [ImportationsController::class, 'indexclient'])
+         ->name('importations.client.index');
+
+    Route::get('/create', [ImportationsController::class, 'createclient'])
+         ->name('importations.client.create');
+    Route::get('/show/{importation}',[ImportationsController::class, 'showclient'])
+         ->name('importations.client.show')->where('id', '[0-9]+');
+    Route::get('/{importation}/edit',[ImportationsController::class, 'editclient'])
+         ->name('importations.client.edit')->where('id', '[0-9]+');
+    Route::post('/', [ImportationsController::class, 'storeclient'])
+         ->name('importations.client.store');
+    Route::put('importation/{importation}', [ImportationsController::class, 'updateclient'])
+         ->name('importations.client.update')->where('id', '[0-9]+');
+    Route::delete('/importation/{importation}',[ImportationsController::class, 'destroyclient'])
+         ->name('importations.client.destroy')->where('id', '[0-9]+');
+});
+
+
+});
 
 
 
@@ -161,4 +192,66 @@ Route::group([
          ->name('acceptation_clients.acceptation_client.update')->where('id', '[0-9]+');
     Route::delete('/acceptation_client/{acceptationClient}',[AcceptationClientsController::class, 'destroy'])
          ->name('acceptation_clients.acceptation_client.destroy')->where('id', '[0-9]+');
+});
+
+Route::group([
+    'prefix' => 'api_users',
+], function () {
+    Route::get('/', [ApiUsersController::class, 'index'])
+         ->name('api_users.api_user.index');
+    Route::get('/create', [ApiUsersController::class, 'create'])
+         ->name('api_users.api_user.create');
+    Route::get('/show/{apiUser}',[ApiUsersController::class, 'show'])
+         ->name('api_users.api_user.show')->where('id', '[0-9]+');
+    Route::get('/{apiUser}/edit',[ApiUsersController::class, 'edit'])
+         ->name('api_users.api_user.edit')->where('id', '[0-9]+');
+    Route::post('/', [ApiUsersController::class, 'store'])
+         ->name('api_users.api_user.store');
+    Route::put('api_user/{apiUser}', [ApiUsersController::class, 'update'])
+         ->name('api_users.api_user.update')->where('id', '[0-9]+');
+    Route::delete('/api_user/{apiUser}',[ApiUsersController::class, 'destroy'])
+         ->name('api_users.api_user.destroy')->where('id', '[0-9]+');
+});
+
+Route::group([
+    'prefix' => 'a_n_i_m_a_l__i_n_f_os',
+], function () {
+    Route::get('/', [ANIMALINFOsController::class, 'index'])
+         ->name('a_n_i_m_a_l__i_n_f_os.a_n_i_m_a_l__i_n_f_o.index');
+    Route::get('/create', [ANIMALINFOsController::class, 'create'])
+         ->name('a_n_i_m_a_l__i_n_f_os.a_n_i_m_a_l__i_n_f_o.create');
+    Route::get('/show/{aNIMALINFO}',[ANIMALINFOsController::class, 'show'])
+         ->name('a_n_i_m_a_l__i_n_f_os.a_n_i_m_a_l__i_n_f_o.show')->where('id', '[0-9]+');
+    Route::get('/{aNIMALINFO}/edit',[ANIMALINFOsController::class, 'edit'])
+         ->name('a_n_i_m_a_l__i_n_f_os.a_n_i_m_a_l__i_n_f_o.edit')->where('id', '[0-9]+');
+    Route::post('/', [ANIMALINFOsController::class, 'store'])
+         ->name('a_n_i_m_a_l__i_n_f_os.a_n_i_m_a_l__i_n_f_o.store');
+    Route::put('a_n_i_m_a_l__i_n_f_o/{aNIMALINFO}', [ANIMALINFOsController::class, 'update'])
+         ->name('a_n_i_m_a_l__i_n_f_os.a_n_i_m_a_l__i_n_f_o.update')->where('id', '[0-9]+');
+    Route::delete('/a_n_i_m_a_l__i_n_f_o/{aNIMALINFO}',[ANIMALINFOsController::class, 'destroy'])
+         ->name('a_n_i_m_a_l__i_n_f_os.a_n_i_m_a_l__i_n_f_o.destroy')->where('id', '[0-9]+');
+});
+
+Route::group([
+    'prefix' => 'importations',
+], function () {
+    Route::get('/', [ImportationsController::class, 'index'])
+         ->name('importations.importation.index');
+
+    Route::get('/create', [ImportationsController::class, 'create'])
+         ->name('importations.importation.create');
+    Route::get('/show/{importation}',[ImportationsController::class, 'show'])
+         ->name('importations.importation.show')->where('id', '[0-9]+');
+    Route::get('/{importation}/edit',[ImportationsController::class, 'edit'])
+         ->name('importations.importation.edit')->where('id', '[0-9]+');
+         Route::get('/{importation}/accept',[ImportationsController::class, 'accept'])
+         ->name('importation.accept')->where('id', '[0-9]+');
+
+
+    Route::post('/', [ImportationsController::class, 'store'])
+         ->name('importations.importation.store');
+    Route::put('importation/{importation}', [ImportationsController::class, 'update'])
+         ->name('importations.importation.update')->where('id', '[0-9]+');
+    Route::delete('/importation/{importation}',[ImportationsController::class, 'destroy'])
+         ->name('importations.importation.destroy')->where('id', '[0-9]+');
 });

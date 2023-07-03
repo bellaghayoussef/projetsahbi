@@ -32,6 +32,24 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link " href="{{ route('api_users.api_user.index') }}">
+              <div class="text-white text-center ms-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons-round opacity-10">manage_accounts</i>
+              </div>
+              <span class="nav-link-text me-1">{{ trans('api_users.model_plural') }}</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="{{ route('importations.importation.index') }}">
+              <div class="text-white text-center ms-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons-round opacity-10">dashboard</i>
+              </div>
+              <span class="nav-link-text me-1">{{ trans('importations.model_plural') }} </span>
+            </a>
+          </li>
+
 
           <li class="nav-item">
             <a class="nav-link " href="{{ route('countries.countries.index') }}">

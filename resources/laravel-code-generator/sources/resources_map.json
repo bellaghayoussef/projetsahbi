@@ -11,5 +11,17 @@
     {
         "model-name": "AcceptationClient",
         "resource-file": "acceptation_clients.json"
+    },
+    {
+        "model-name": "ApiUser",
+        "resource-file": "api_users.json"
+    },
+    {
+        "model-name": "ANIMAL_INFO",
+        "resource-file": "a_n_i_m_a_l__i_n_f_os.json"
+    },
+    {
+        "model-name": "importation",
+        "resource-file": "importations.json"
     }
 ]

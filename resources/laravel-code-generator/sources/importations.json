@@ -1,0 +1,1507 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "labels": {
+                "en": "Id",
+                "ar": "Id"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "",
+            "is-on-index": false,
+            "is-on-show": false,
+            "is-on-form": false,
+            "data-type": "int",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": true,
+            "comment": null,
+            "is-nullable": false,
+            "is-header": false,
+            "is-unsigned": true,
+            "is-auto-increment": true,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter id here...",
+                "ar": "Enter id here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "id",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The id of the model.",
+                "ar": "The id of the model."
+            }
+        },
+        {
+            "name": "client_id",
+            "labels": {
+                "en": "Client",
+                "ar": "Client"
+            },
+            "html-type": "select",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "int",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": true,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": true,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Select client",
+                "ar": "Select client"
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": {
+                "name": "client",
+                "type": "belongsTo",
+                "params": [
+                    "App\\Models\\Client",
+                    "client_id"
+                ],
+                "field": "created_at"
+            },
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "client_id",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The client of the model.",
+                "ar": "The client of the model."
+            }
+        },
+        {
+            "name": "CER_TYPE",
+            "labels": {
+                "en": "C E R  T Y P E",
+                "ar": "C E R  T Y P E"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter c e r  t y p e here...",
+                "ar": "Enter c e r  t y p e here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "CER_TYPE",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The c e r  t y p e of the model.",
+                "ar": "The c e r  t y p e of the model."
+            }
+        },
+        {
+            "name": "CER_LANG",
+            "labels": {
+                "en": "C E R  L A N G",
+                "ar": "C E R  L A N G"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter c e r  l a n g here...",
+                "ar": "Enter c e r  l a n g here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "CER_LANG",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The c e r  l a n g of the model.",
+                "ar": "The c e r  l a n g of the model."
+            }
+        },
+        {
+            "name": "COMP_ID",
+            "labels": {
+                "en": "C O M P",
+                "ar": "C O M P"
+            },
+            "html-type": "select",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "int",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": true,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": true,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Select c o m p",
+                "ar": "Select c o m p"
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": {
+                "name": "cOMP",
+                "type": "belongsTo",
+                "params": [
+                    "App\\Models\\COMP",
+                    "COMP_ID"
+                ],
+                "field": "id"
+            },
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "COMP_ID",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The c o m p of the model.",
+                "ar": "The c o m p of the model."
+            }
+        },
+        {
+            "name": "EUSER_QID",
+            "labels": {
+                "en": "E U S E R  Q I D",
+                "ar": "E U S E R  Q I D"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter e u s e r  q i d here...",
+                "ar": "Enter e u s e r  q i d here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "EUSER_QID",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The e u s e r  q i d of the model.",
+                "ar": "The e u s e r  q i d of the model."
+            }
+        },
+        {
+            "name": "EXP_NAME",
+            "labels": {
+                "en": "E X P  N A M E",
+                "ar": "E X P  N A M E"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter e x p  n a m e here...",
+                "ar": "Enter e x p  n a m e here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "EXP_NAME",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The e x p  n a m e of the model.",
+                "ar": "The e x p  n a m e of the model."
+            }
+        },
+        {
+            "name": "EXP_TEL",
+            "labels": {
+                "en": "E X P  T E L",
+                "ar": "E X P  T E L"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter e x p  t e l here...",
+                "ar": "Enter e x p  t e l here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "EXP_TEL",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The e x p  t e l of the model.",
+                "ar": "The e x p  t e l of the model."
+            }
+        },
+        {
+            "name": "EXP_QID",
+            "labels": {
+                "en": "E X P  Q I D",
+                "ar": "E X P  Q I D"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter e x p  q i d here...",
+                "ar": "Enter e x p  q i d here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "EXP_QID",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The e x p  q i d of the model.",
+                "ar": "The e x p  q i d of the model."
+            }
+        },
+        {
+            "name": "EXP_FAX",
+            "labels": {
+                "en": "E X P  F A X",
+                "ar": "E X P  F A X"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter e x p  f a x here...",
+                "ar": "Enter e x p  f a x here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "EXP_FAX",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The e x p  f a x of the model.",
+                "ar": "The e x p  f a x of the model."
+            }
+        },
+        {
+            "name": "EXP_COUNTRY",
+            "labels": {
+                "en": "E X P  C O U N T R Y",
+                "ar": "E X P  C O U N T R Y"
+            },
+            "html-type": "number",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "numeric",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter e x p  c o u n t r y here...",
+                "ar": "Enter e x p  c o u n t r y here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "EXP_COUNTRY",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The e x p  c o u n t r y of the model.",
+                "ar": "The e x p  c o u n t r y of the model."
+            }
+        },
+        {
+            "name": "IMP_NAME",
+            "labels": {
+                "en": "I M P  N A M E",
+                "ar": "I M P  N A M E"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter i m p  n a m e here...",
+                "ar": "Enter i m p  n a m e here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "IMP_NAME",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The i m p  n a m e of the model.",
+                "ar": "The i m p  n a m e of the model."
+            }
+        },
+        {
+            "name": "IMP_ADDRESS",
+            "labels": {
+                "en": "I M P  A D D R E S S",
+                "ar": "I M P  A D D R E S S"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter i m p  a d d r e s s here...",
+                "ar": "Enter i m p  a d d r e s s here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "IMP_ADDRESS",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The i m p  a d d r e s s of the model.",
+                "ar": "The i m p  a d d r e s s of the model."
+            }
+        },
+        {
+            "name": "IMP_FAX",
+            "labels": {
+                "en": "I M P  F A X",
+                "ar": "I M P  F A X"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter i m p  f a x here...",
+                "ar": "Enter i m p  f a x here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "IMP_FAX",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The i m p  f a x of the model.",
+                "ar": "The i m p  f a x of the model."
+            }
+        },
+        {
+            "name": "IMP_TEL",
+            "labels": {
+                "en": "I M P  T E L",
+                "ar": "I M P  T E L"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter i m p  t e l here...",
+                "ar": "Enter i m p  t e l here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "IMP_TEL",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The i m p  t e l of the model.",
+                "ar": "The i m p  t e l of the model."
+            }
+        },
+        {
+            "name": "IMP_POBOX",
+            "labels": {
+                "en": "I M P  P O B O X",
+                "ar": "I M P  P O B O X"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter i m p  p o b o x here...",
+                "ar": "Enter i m p  p o b o x here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "IMP_POBOX",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The i m p  p o b o x of the model.",
+                "ar": "The i m p  p o b o x of the model."
+            }
+        },
+        {
+            "name": "IMP_COUNTRY",
+            "labels": {
+                "en": "I M P  C O U N T R Y",
+                "ar": "I M P  C O U N T R Y"
+            },
+            "html-type": "number",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "numeric",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter i m p  c o u n t r y here...",
+                "ar": "Enter i m p  c o u n t r y here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "IMP_COUNTRY",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The i m p  c o u n t r y of the model.",
+                "ar": "The i m p  c o u n t r y of the model."
+            }
+        },
+        {
+            "name": "ORIGIN_COUNTRY",
+            "labels": {
+                "en": "O R I G I N  C O U N T R Y",
+                "ar": "O R I G I N  C O U N T R Y"
+            },
+            "html-type": "number",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "numeric",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter o r i g i n  c o u n t r y here...",
+                "ar": "Enter o r i g i n  c o u n t r y here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "ORIGIN_COUNTRY",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The o r i g i n  c o u n t r y of the model.",
+                "ar": "The o r i g i n  c o u n t r y of the model."
+            }
+        },
+        {
+            "name": "SHIPPING_PLACE",
+            "labels": {
+                "en": "S H I P P I N G  P L A C E",
+                "ar": "S H I P P I N G  P L A C E"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter s h i p p i n g  p l a c e here...",
+                "ar": "Enter s h i p p i n g  p l a c e here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "SHIPPING_PLACE",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The s h i p p i n g  p l a c e of the model.",
+                "ar": "The s h i p p i n g  p l a c e of the model."
+            }
+        },
+        {
+            "name": "ENTERY_PORT",
+            "labels": {
+                "en": "E N T E R Y  P O R T",
+                "ar": "E N T E R Y  P O R T"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter e n t e r y  p o r t here...",
+                "ar": "Enter e n t e r y  p o r t here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "ENTERY_PORT",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The e n t e r y  p o r t of the model.",
+                "ar": "The e n t e r y  p o r t of the model."
+            }
+        },
+        {
+            "name": "EXPECTED_ARRIVAL_DATE",
+            "labels": {
+                "en": "E X P E C T E D  A R R I V A L  D A T E",
+                "ar": "E X P E C T E D  A R R I V A L  D A T E"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "date_format:j/n/Y",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "date",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "j/n/Y",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter e x p e c t e d  a r r i v a l  d a t e here...",
+                "ar": "Enter e x p e c t e d  a r r i v a l  d a t e here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "EXPECTED_ARRIVAL_DATE",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The e x p e c t e d  a r r i v a l  d a t e of the model.",
+                "ar": "The e x p e c t e d  a r r i v a l  d a t e of the model."
+            }
+        },
+        {
+            "name": "TRANSPORT",
+            "labels": {
+                "en": "T R A N S P O R T",
+                "ar": "T R A N S P O R T"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter t r a n s p o r t here...",
+                "ar": "Enter t r a n s p o r t here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "TRANSPORT",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The t r a n s p o r t of the model.",
+                "ar": "The t r a n s p o r t of the model."
+            }
+        },
+        {
+            "name": "SHIPPING_DATE",
+            "labels": {
+                "en": "S H I P P I N G  D A T E",
+                "ar": "S H I P P I N G  D A T E"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "date_format:j/n/Y",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "date",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "j/n/Y",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter s h i p p i n g  d a t e here...",
+                "ar": "Enter s h i p p i n g  d a t e here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "SHIPPING_DATE",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The s h i p p i n g  d a t e of the model.",
+                "ar": "The s h i p p i n g  d a t e of the model."
+            }
+        },
+        {
+            "name": "APPLICANT_NAME",
+            "labels": {
+                "en": "A P P L I C A N T  N A M E",
+                "ar": "A P P L I C A N T  N A M E"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter a p p l i c a n t  n a m e here...",
+                "ar": "Enter a p p l i c a n t  n a m e here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "APPLICANT_NAME",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The a p p l i c a n t  n a m e of the model.",
+                "ar": "The a p p l i c a n t  n a m e of the model."
+            }
+        },
+        {
+            "name": "APPLICANT_TEL",
+            "labels": {
+                "en": "A P P L I C A N T  T E L",
+                "ar": "A P P L I C A N T  T E L"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter a p p l i c a n t  t e l here...",
+                "ar": "Enter a p p l i c a n t  t e l here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "APPLICANT_TEL",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The a p p l i c a n t  t e l of the model.",
+                "ar": "The a p p l i c a n t  t e l of the model."
+            }
+        },
+        {
+            "name": "EXP_NATIONALITY",
+            "labels": {
+                "en": "E X P  N A T I O N A L I T Y",
+                "ar": "E X P  N A T I O N A L I T Y"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter e x p  n a t i o n a l i t y here...",
+                "ar": "Enter e x p  n a t i o n a l i t y here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "EXP_NATIONALITY",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The e x p  n a t i o n a l i t y of the model.",
+                "ar": "The e x p  n a t i o n a l i t y of the model."
+            }
+        },
+        {
+            "name": "EXP_PASSPORT_NUM",
+            "labels": {
+                "en": "E X P  P A S S P O R T  N U M",
+                "ar": "E X P  P A S S P O R T  N U M"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter e x p  p a s s p o r t  n u m here...",
+                "ar": "Enter e x p  p a s s p o r t  n u m here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "EXP_PASSPORT_NUM",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The e x p  p a s s p o r t  n u m of the model.",
+                "ar": "The e x p  p a s s p o r t  n u m of the model."
+            }
+        },
+        {
+            "name": "accepted",
+            "labels": {
+                "en": "Accepted",
+                "ar": "Accepted"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter accepted here...",
+                "ar": "Enter accepted here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "accepted",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The accepted of the model.",
+                "ar": "The accepted of the model."
+            }
+        },
+        {
+            "name": "reson",
+            "labels": {
+                "en": "Reson",
+                "ar": "Reson"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter reson here...",
+                "ar": "Enter reson here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "reson",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The reson of the model.",
+                "ar": "The reson of the model."
+            }
+        }
+    ],
+    "relations": [],
+    "indexes": [],
+    "auto-manage-created-and-updated-at": true,
+    "table-name": null,
+    "protection": {
+        "is-model-protected": false,
+        "is-controller-protected": false,
+        "is-api-resource-protected": false,
+        "is-api-resource-collection-protected": false,
+        "is-api-documentation-protected": false,
+        "is-api-documentation-controller-protected": false,
+        "is-form-request-protected": false,
+        "is-languages-protected": false,
+        "is-form-view-protected": false,
+        "is-index-view-protected": false,
+        "is-create-view-protected": false,
+        "is-edit-view-protected": false,
+        "is-show-view-protected": false
+    },
+    "api-documentation": {
+        "access_token_with_bearer": {
+            "en": "The access token prefixed with the \"Bearer \" key word.",
+            "ar": "The access token prefixed with the \"Bearer \" key word."
+        },
+        "index_route_description": {
+            "en": "Retrieve existing importations.",
+            "ar": "Retrieve existing importations."
+        },
+        "index_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ar": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "the_key_is_the_model_property_and_the_value_is_the_model_value": {
+            "en": "The array's key is the importation property name where the value is the assigned value to the retrieved importation.",
+            "ar": "The array's key is the importation property name where the value is the assigned value to the retrieved importation."
+        },
+        "link_to_retrieve_first_page": {
+            "en": "Link to retrieve first page.",
+            "ar": "Link to retrieve first page."
+        },
+        "link_to_retrieve_last_page": {
+            "en": "Link to retrieve last page.",
+            "ar": "Link to retrieve last page."
+        },
+        "link_to_retrieve_previous_page": {
+            "en": "Link to retrieve previous page.",
+            "ar": "Link to retrieve previous page."
+        },
+        "link_to_retrieve_next_page": {
+            "en": "Link to retrieve next page.",
+            "ar": "Link to retrieve next page."
+        },
+        "the_number_of_current_page": {
+            "en": "The number of current page.",
+            "ar": "The number of current page."
+        },
+        "the_index_of_the_first_retrieved_item": {
+            "en": "The index of first retrieved importation.",
+            "ar": "The index of first retrieved importation."
+        },
+        "the_number_of_the_last_page": {
+            "en": "The number of the last page.",
+            "ar": "The number of the last page."
+        },
+        "the_base_link_to_the_resource": {
+            "en": "The base link to the api resource.",
+            "ar": "The base link to the api resource."
+        },
+        "the_number_of_models_per_page": {
+            "en": "The number of importations per page.",
+            "ar": "The number of importations per page."
+        },
+        "the_index_of_the_last_retrieved_item": {
+            "en": "The index of last retrieved importation.",
+            "ar": "The index of last retrieved importation."
+        },
+        "the_total_of_available_pages": {
+            "en": "The total of the available pages.",
+            "ar": "The total of the available pages."
+        },
+        "store_route_description": {
+            "en": "Create new importation.",
+            "ar": "Create new importation."
+        },
+        "store_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ar": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "update_route_description": {
+            "en": "Update existsing importation.",
+            "ar": "Update existsing importation."
+        },
+        "update_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ar": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "show_route_description": {
+            "en": "Retrieve existsing importation.",
+            "ar": "Retrieve existsing importation."
+        },
+        "show_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ar": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "the_id_of_model_to_retrieve": {
+            "en": "The unique id of the importation to retrieve",
+            "ar": "The unique id of the importation to retrieve"
+        },
+        "destroy_route_description": {
+            "en": "Delete existsing importation.",
+            "ar": "Delete existsing importation."
+        },
+        "destroy_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ar": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "the_id_of_model_to_delete": {
+            "en": "The id of the importation to delete.",
+            "ar": "The id of the importation to delete."
+        },
+        "general_description": {
+            "en": "Allows you to list, create, edit, show and delete importations.",
+            "ar": "Allows you to list, create, edit, show and delete importations."
+        },
+        "indicate_whether_the_request_was_successful_or_not": {
+            "en": "Indicate whether the request was successful or not.",
+            "ar": "Indicate whether the request was successful or not."
+        },
+        "the_id_of_the_model": {
+            "en": "The id of the importation.",
+            "ar": "The id of the importation."
+        },
+        "this_parameter_must_be_present_in_the_request": {
+            "en": "This parameter must be present in the request.",
+            "ar": "This parameter must be present in the request."
+        },
+        "the_request_failed_validation": {
+            "en": "The request failed validation.",
+            "ar": "The request failed validation."
+        },
+        "list_of_the_invalid_errors": {
+            "en": "List of the invalid errors.",
+            "ar": "List of the invalid errors."
+        },
+        "the_requested_model_does_not_exists": {
+            "en": "The requested importation does not exists.",
+            "ar": "The requested importation does not exists."
+        },
+        "the_user_does_not_have_permission_to_access_the_requested_resource": {
+            "en": "User does not have permission to access the requested resource.",
+            "ar": "User does not have permission to access the requested resource."
+        }
+    }
+}

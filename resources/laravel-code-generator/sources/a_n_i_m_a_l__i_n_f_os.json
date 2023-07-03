@@ -1,0 +1,579 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "labels": {
+                "en": "Id",
+                "ar": "Id"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "",
+            "is-on-index": false,
+            "is-on-show": false,
+            "is-on-form": false,
+            "data-type": "int",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": true,
+            "comment": null,
+            "is-nullable": false,
+            "is-header": false,
+            "is-unsigned": true,
+            "is-auto-increment": true,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter id here...",
+                "ar": "Enter id here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "id",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The id of the model.",
+                "ar": "The id of the model."
+            }
+        },
+        {
+            "name": "ORIGIN_COUNTRY",
+            "labels": {
+                "en": "O R I G I N  C O U N T R Y",
+                "ar": "O R I G I N  C O U N T R Y"
+            },
+            "html-type": "number",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "numeric",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter o r i g i n  c o u n t r y here...",
+                "ar": "Enter o r i g i n  c o u n t r y here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "ORIGIN_COUNTRY",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The o r i g i n  c o u n t r y of the model.",
+                "ar": "The o r i g i n  c o u n t r y of the model."
+            }
+        },
+        {
+            "name": "TRANSIET_COUNTRY",
+            "labels": {
+                "en": "T R A N S I E T  C O U N T R Y",
+                "ar": "T R A N S I E T  C O U N T R Y"
+            },
+            "html-type": "number",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "numeric",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter t r a n s i e t  c o u n t r y here...",
+                "ar": "Enter t r a n s i e t  c o u n t r y here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "TRANSIET_COUNTRY",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The t r a n s i e t  c o u n t r y of the model.",
+                "ar": "The t r a n s i e t  c o u n t r y of the model."
+            }
+        },
+        {
+            "name": "ANML_SPECIES",
+            "labels": {
+                "en": "A N M L  S P E C I E S",
+                "ar": "A N M L  S P E C I E S"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter a n m l  s p e c i e s here...",
+                "ar": "Enter a n m l  s p e c i e s here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "ANML_SPECIES",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The a n m l  s p e c i e s of the model.",
+                "ar": "The a n m l  s p e c i e s of the model."
+            }
+        },
+        {
+            "name": "ANML_SEX",
+            "labels": {
+                "en": "A N M L  S E X",
+                "ar": "A N M L  S E X"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter a n m l  s e x here...",
+                "ar": "Enter a n m l  s e x here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "ANML_SEX",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The a n m l  s e x of the model.",
+                "ar": "The a n m l  s e x of the model."
+            }
+        },
+        {
+            "name": "ANML_NUMBER",
+            "labels": {
+                "en": "A N M L  N U M B E R",
+                "ar": "A N M L  N U M B E R"
+            },
+            "html-type": "number",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "numeric",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter a n m l  n u m b e r here...",
+                "ar": "Enter a n m l  n u m b e r here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "ANML_NUMBER",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The a n m l  n u m b e r of the model.",
+                "ar": "The a n m l  n u m b e r of the model."
+            }
+        },
+        {
+            "name": "ANML_USE",
+            "labels": {
+                "en": "A N M L  U S E",
+                "ar": "A N M L  U S E"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter a n m l  u s e here...",
+                "ar": "Enter a n m l  u s e here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "ANML_USE",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The a n m l  u s e of the model.",
+                "ar": "The a n m l  u s e of the model."
+            }
+        },
+        {
+            "name": "ANIMAL_BREED",
+            "labels": {
+                "en": "A N I M A L  B R E E D",
+                "ar": "A N I M A L  B R E E D"
+            },
+            "html-type": "text",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "string|min:1",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "string",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": false,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": false,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Enter a n i m a l  b r e e d here...",
+                "ar": "Enter a n i m a l  b r e e d here..."
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": null,
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "ANIMAL_BREED",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The a n i m a l  b r e e d of the model.",
+                "ar": "The a n i m a l  b r e e d of the model."
+            }
+        },
+        {
+            "name": "client_id",
+            "labels": {
+                "en": "Client",
+                "ar": "Client"
+            },
+            "html-type": "select",
+            "css-class": "",
+            "options": {},
+            "html-value": null,
+            "validation": "",
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
+            "data-type": "int",
+            "data-type-params": [],
+            "data-value": null,
+            "is-index": true,
+            "is-unique": false,
+            "is-primary": false,
+            "comment": null,
+            "is-nullable": true,
+            "is-header": false,
+            "is-unsigned": true,
+            "is-auto-increment": false,
+            "is-inline-options": false,
+            "is-date": false,
+            "date-format": "",
+            "cast-as": "",
+            "placeholder": {
+                "en": "Select client",
+                "ar": "Select client"
+            },
+            "delimiter": "; ",
+            "range": [],
+            "foreign-relation": {
+                "name": "client",
+                "type": "belongsTo",
+                "params": [
+                    "App\\Models\\Client",
+                    "client_id"
+                ],
+                "field": "created_at"
+            },
+            "foreign-constraint": null,
+            "on-store": null,
+            "on-update": null,
+            "api-key": "client_id",
+            "is-api-visible": true,
+            "api-description": {
+                "en": "The client of the model.",
+                "ar": "The client of the model."
+            }
+        }
+    ],
+    "relations": [],
+    "indexes": [],
+    "auto-manage-created-and-updated-at": true,
+    "table-name": null,
+    "protection": {
+        "is-model-protected": false,
+        "is-controller-protected": false,
+        "is-api-resource-protected": false,
+        "is-api-resource-collection-protected": false,
+        "is-api-documentation-protected": false,
+        "is-api-documentation-controller-protected": false,
+        "is-form-request-protected": false,
+        "is-languages-protected": false,
+        "is-form-view-protected": false,
+        "is-index-view-protected": false,
+        "is-create-view-protected": false,
+        "is-edit-view-protected": false,
+        "is-show-view-protected": false
+    },
+    "api-documentation": {
+        "access_token_with_bearer": {
+            "en": "The access token prefixed with the \"Bearer \" key word.",
+            "ar": "The access token prefixed with the \"Bearer \" key word."
+        },
+        "index_route_description": {
+            "en": "Retrieve existing a n i m a l  i n f os.",
+            "ar": "Retrieve existing a n i m a l  i n f os."
+        },
+        "index_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ar": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "the_key_is_the_model_property_and_the_value_is_the_model_value": {
+            "en": "The array's key is the a n i m a l  i n f o property name where the value is the assigned value to the retrieved a n i m a l  i n f o.",
+            "ar": "The array's key is the a n i m a l  i n f o property name where the value is the assigned value to the retrieved a n i m a l  i n f o."
+        },
+        "link_to_retrieve_first_page": {
+            "en": "Link to retrieve first page.",
+            "ar": "Link to retrieve first page."
+        },
+        "link_to_retrieve_last_page": {
+            "en": "Link to retrieve last page.",
+            "ar": "Link to retrieve last page."
+        },
+        "link_to_retrieve_previous_page": {
+            "en": "Link to retrieve previous page.",
+            "ar": "Link to retrieve previous page."
+        },
+        "link_to_retrieve_next_page": {
+            "en": "Link to retrieve next page.",
+            "ar": "Link to retrieve next page."
+        },
+        "the_number_of_current_page": {
+            "en": "The number of current page.",
+            "ar": "The number of current page."
+        },
+        "the_index_of_the_first_retrieved_item": {
+            "en": "The index of first retrieved a n i m a l  i n f o.",
+            "ar": "The index of first retrieved a n i m a l  i n f o."
+        },
+        "the_number_of_the_last_page": {
+            "en": "The number of the last page.",
+            "ar": "The number of the last page."
+        },
+        "the_base_link_to_the_resource": {
+            "en": "The base link to the api resource.",
+            "ar": "The base link to the api resource."
+        },
+        "the_number_of_models_per_page": {
+            "en": "The number of a n i m a l  i n f os per page.",
+            "ar": "The number of a n i m a l  i n f os per page."
+        },
+        "the_index_of_the_last_retrieved_item": {
+            "en": "The index of last retrieved a n i m a l  i n f o.",
+            "ar": "The index of last retrieved a n i m a l  i n f o."
+        },
+        "the_total_of_available_pages": {
+            "en": "The total of the available pages.",
+            "ar": "The total of the available pages."
+        },
+        "store_route_description": {
+            "en": "Create new a n i m a l  i n f o.",
+            "ar": "Create new a n i m a l  i n f o."
+        },
+        "store_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ar": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "update_route_description": {
+            "en": "Update existsing a n i m a l  i n f o.",
+            "ar": "Update existsing a n i m a l  i n f o."
+        },
+        "update_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ar": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "show_route_description": {
+            "en": "Retrieve existsing a n i m a l  i n f o.",
+            "ar": "Retrieve existsing a n i m a l  i n f o."
+        },
+        "show_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ar": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "the_id_of_model_to_retrieve": {
+            "en": "The unique id of the a n i m a l  i n f o to retrieve",
+            "ar": "The unique id of the a n i m a l  i n f o to retrieve"
+        },
+        "destroy_route_description": {
+            "en": "Delete existsing a n i m a l  i n f o.",
+            "ar": "Delete existsing a n i m a l  i n f o."
+        },
+        "destroy_route_response_description": {
+            "en": "The API's response will be JSON based data. The JSON object will be structured as follow",
+            "ar": "The API's response will be JSON based data. The JSON object will be structured as follow"
+        },
+        "the_id_of_model_to_delete": {
+            "en": "The id of the a n i m a l  i n f o to delete.",
+            "ar": "The id of the a n i m a l  i n f o to delete."
+        },
+        "general_description": {
+            "en": "Allows you to list, create, edit, show and delete a n i m a l  i n f os.",
+            "ar": "Allows you to list, create, edit, show and delete a n i m a l  i n f os."
+        },
+        "indicate_whether_the_request_was_successful_or_not": {
+            "en": "Indicate whether the request was successful or not.",
+            "ar": "Indicate whether the request was successful or not."
+        },
+        "the_id_of_the_model": {
+            "en": "The id of the a n i m a l  i n f o.",
+            "ar": "The id of the a n i m a l  i n f o."
+        },
+        "this_parameter_must_be_present_in_the_request": {
+            "en": "This parameter must be present in the request.",
+            "ar": "This parameter must be present in the request."
+        },
+        "the_request_failed_validation": {
+            "en": "The request failed validation.",
+            "ar": "The request failed validation."
+        },
+        "list_of_the_invalid_errors": {
+            "en": "List of the invalid errors.",
+            "ar": "List of the invalid errors."
+        },
+        "the_requested_model_does_not_exists": {
+            "en": "The requested a n i m a l  i n f o does not exists.",
+            "ar": "The requested a n i m a l  i n f o does not exists."
+        },
+        "the_user_does_not_have_permission_to_access_the_requested_resource": {
+            "en": "User does not have permission to access the requested resource.",
+            "ar": "User does not have permission to access the requested resource."
+        }
+    }
+}
